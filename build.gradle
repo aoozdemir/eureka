@@ -75,7 +75,7 @@ subprojects {
         // setting this property prevents java from grabbing focus when running the tests under osx
         systemProperty 'java.awt.headless', 'true'
         outputs.upToDateWhen {false}
-        jvmArgs = ['-javaagent:/home/ec2-user/thundra-agent-bootstrap.jar']
+        jvmArgs = ["-javaagent:${System.properties['agentPath']}/thundra-agent-bootstrap.jar".toString()]
     }
 
     jar {
